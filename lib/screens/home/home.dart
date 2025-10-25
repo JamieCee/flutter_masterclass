@@ -3,6 +3,8 @@ import 'package:flutter_masterclass/screens/home/character_card.dart';
 import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 
+import '../../models/character.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -11,8 +13,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List characters = ['mario', 'luigi', 'peach', 'toad', 'bowser', 'yoshi'];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
