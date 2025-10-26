@@ -32,31 +32,3 @@ class Character with Stats {
   // getters
   bool get isFav => _isFav;
 }
-
-// Dummy Data
-List<Character> characters = [
-  Character(
-    id: '1',
-    name: 'Klara',
-    vocation: Vocation.wizard,
-    slogan: 'Kapumf!',
-  ),
-  Character(
-    id: '2',
-    name: 'Zeus',
-    vocation: Vocation.junkie,
-    slogan: 'Kapooof!',
-  ),
-  Character(
-    id: '3',
-    name: 'Marcel',
-    vocation: Vocation.ninja,
-    slogan: 'Expert Fingering',
-  ),
-  Character(
-    name: 'Mercy',
-    slogan: 'The Mighty One',
-    vocation: Vocation.raider,
-    id: '4',
-  ),
-];

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masterclass/screens/home/character_card.dart';
+import 'package:flutter_masterclass/services/character_store.dart';
 import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
+import 'package:provider/provider.dart';
 
 import '../../models/character.dart';
 import '../create/create.dart';
@@ -26,19 +28,23 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             Expanded(
-              child: ListView.builder(
-                itemCount: characters.length,
-                itemBuilder: (_, index) {
-                  return CharacterCard(character: characters[index]);
+              child: Consumer<CharacterStore>(
+                builder: (context, value, child) {
+                  return ListView.builder(
+                    itemCount: value.characters.length,
+                    itemBuilder: (_, index) {
+                      return CharacterCard(character: value.characters[index]);
+                    },
+                  );
                 },
               ),
             ),
 
             StyledButton(
               onPressed: () {
-                Navigator.of(
-                  context,
-                ).push(MaterialPageRoute(builder: (ctx) => const Create()));
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (ctx) => const CreateScreen()),
+                );
               },
               child: const StyledHeading('Create New'),
             ),
