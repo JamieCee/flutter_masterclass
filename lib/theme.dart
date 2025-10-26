@@ -65,4 +65,12 @@ ThemeData primaryTheme = ThemeData(
     labelStyle: TextStyle(color: AppColors.textColor),
     prefixIconColor: AppColors.textColor,
   ),
+
+  dialogTheme: DialogThemeData(
+    backgroundColor: AppColors.secondaryColor,
+    titleTextStyle: TextStyle(color: AppColors.titleColor),
+    contentTextStyle: TextStyle(color: AppColors.textColor),
+    surfaceTintColor: Colors.transparent,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+  ),
 );

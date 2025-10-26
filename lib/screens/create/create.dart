@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../models/vocation.dart';
+import '../home/home.dart';
 
 var uuid = const Uuid();
 
@@ -44,6 +45,30 @@ class _CreateState extends State<Create> {
     if (_nameController.text.trim().isEmpty ||
         _sloganController.text.trim().isEmpty) {
       //TODO: Show error dialog
+
+      // show dialog invoke
+      showDialog(
+        context: context,
+        builder: (ctx) {
+          return AlertDialog(
+            title: const StyledHeading('Missing Fields'),
+            content: const StyledText(
+              'Every good RPG character needs a great name and slogan...',
+            ),
+            contentPadding: EdgeInsets.all(20),
+            actions: [
+              StyledButton(
+                onPressed: () {
+                  Navigator.pop(ctx);
+                },
+                child: StyledHeading('Close'),
+              ),
+            ],
+            actionsAlignment: MainAxisAlignment.center,
+          );
+        },
+      );
+
       return;
     }
 
@@ -56,6 +81,9 @@ class _CreateState extends State<Create> {
       ),
     );
 
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (context) => const Home()));
     return;
   }
 

@@ -15,35 +15,40 @@ mixin Stats {
     "skill": _skill,
   };
 
+  // List of maps
   List<Map<String, String>> get statsAsFormattedList => [
-    {"name": "Health", "value": _health.toString()},
-    {"name": "Attack", "value": _attack.toString()},
-    {"name": "Defense", "value": _defense.toString()},
-    {"name": "Skill", "value": _skill.toString()},
+    {"title": "Health", "value": _health.toString()},
+    {"title": "Attack", "value": _attack.toString()},
+    {"title": "Defense", "value": _defense.toString()},
+    {"title": "Skill", "value": _skill.toString()},
   ];
 
   // methods
   void increaseStat(String stat) {
     if (_points > 0) {
-      switch (stat) {
+      switch (stat.toLowerCase()) {
         case "health":
           _health++;
+          _points--;
           break;
         case "attack":
           _attack++;
+          _points--;
           break;
         case "defense":
           _defense++;
+          _points--;
           break;
         case "skill":
           _skill++;
+          _points--;
           break;
       }
     }
   }
 
   void decreaseStat(String stat) {
-    switch (stat) {
+    switch (stat.toLowerCase()) {
       case "health":
         if (_health > 5) {
           _health--;

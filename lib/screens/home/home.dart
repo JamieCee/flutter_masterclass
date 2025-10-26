@@ -4,6 +4,7 @@ import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 
 import '../../models/character.dart';
+import '../create/create.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -34,7 +35,11 @@ class _HomeState extends State<Home> {
             ),
 
             StyledButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(
+                  context,
+                ).push(MaterialPageRoute(builder: (ctx) => const Create()));
+              },
               child: const StyledHeading('Create New'),
             ),
           ],
