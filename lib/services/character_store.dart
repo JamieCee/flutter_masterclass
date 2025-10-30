@@ -39,4 +39,11 @@ class CharacterStore extends ChangeNotifier {
     _characters.add(character);
     notifyListeners();
   }
+
+  void removeCharacter(Character character) {
+    print('Removing character: ${character.name}');
+  }
+
+  // _characters.remove(character);
+  // notifyListeners();
 }

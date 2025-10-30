@@ -5,7 +5,6 @@ import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 import 'package:provider/provider.dart';
 
-import '../../models/character.dart';
 import '../create/create.dart';
 
 class Home extends StatefulWidget {
@@ -33,7 +32,20 @@ class _HomeState extends State<Home> {
                   return ListView.builder(
                     itemCount: value.characters.length,
                     itemBuilder: (_, index) {
-                      return CharacterCard(character: value.characters[index]);
+                      return GestureDetector(
+                        child: CharacterCard(
+                          character: value.characters[index],
+                        ),
+                        onPanEnd: (details) {
+                          // Check if the swipe velocity was toward the left
+                          if (details.velocity.pixelsPerSecond.dx < 0) {
+                            Provider.of<CharacterStore>(
+                              context,
+                              listen: false,
+                            ).removeCharacter(value.characters[index]);
+                          }
+                        },
+                      );
                     },
                   );
                 },
