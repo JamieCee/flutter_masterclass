@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "759151165619",
+    "project_id": "flutter-masterclass-46dcf",
+    "storage_bucket": "flutter-masterclass-46dcf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759151165619:android:f19399cc864b20d6aeb0c6",
+        "android_client_info": {
+          "package_name": "com.example.flutter_masterclass"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXd28JzVJPixS-2JA7JOyVQv3c2ImvtsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

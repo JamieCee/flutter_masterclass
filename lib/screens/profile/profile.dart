@@ -7,6 +7,9 @@ import 'package:flutter_masterclass/screens/profile/weapon_and_ability.dart';
 import 'package:flutter_masterclass/shared/styled_button.dart';
 import 'package:flutter_masterclass/shared/styled_text.dart';
 import 'package:flutter_masterclass/theme.dart';
+import 'package:provider/provider.dart';
+
+import '../../services/character_store.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key, required this.character});
@@ -44,6 +47,11 @@ class Profile extends StatelessWidget {
             // save button
             StyledButton(
               onPressed: () {
+                Provider.of<CharacterStore>(
+                  context,
+                  listen: false,
+                ).saveCharacter(character);
+
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: const StyledHeading('Character was saved!'),

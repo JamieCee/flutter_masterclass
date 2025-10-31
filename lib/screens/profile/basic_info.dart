@@ -22,10 +22,13 @@ class _BasicInfoState extends State<BasicInfo> {
       child: Row(
         children: [
           // Image
-          Image.asset(
-            'assets/images/vocations/${widget.character.vocation.image}',
-            width: 140,
-            height: 140,
+          Hero(
+            tag: widget.character.id.toString(),
+            child: Image.asset(
+              'assets/images/vocations/${widget.character.vocation.image}',
+              width: 140,
+              height: 140,
+            ),
           ),
 
           const SizedBox(width: 20),

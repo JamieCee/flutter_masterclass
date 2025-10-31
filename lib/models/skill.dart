@@ -63,7 +63,7 @@ final List<Skill> allSkills = [
   Skill(
     id: '8',
     name: 'Support Shell',
-    image: 'f_clear',
+    image: 'gamify.jpg',
     vocation: Vocation.raider,
   ),
 
